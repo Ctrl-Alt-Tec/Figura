@@ -51,6 +51,8 @@ class AltBlog{
         _this = this;
         let options = {
             container: document.querySelector('#container'),
+            enableQueries: true,
+            initialHTML: '',
             ...o
         };
         this.baseURL = baseURL;
@@ -65,22 +67,24 @@ class AltBlog{
         let posts_raw = await fetch( this.baseURL );
         this.posts = await posts_raw.json();
 
-        let query = new URLSearchParams(window.location.search);
-
-        if (query.get('post')){
-            this.openPost(query.get('post'))
-        } else {
-            this.displayPosts()
+        if(this.options.enableQueries){
+            let query = new URLSearchParams(window.location.search);
+    
+            if (query.get('post')){
+                this.openPost(query.get('post'))
+            } else {
+                this.displayPosts()
+            }
         }
-
-
     }
 
     displayPosts = (cond = ()=>true)=>{
         this.container.innerHTML = "";
+        this.container.innerHTML = this.options.initialHTML || "";
         this.posts.filter(cond).forEach(post=>{
             this.container.append( AltBlog.Card(post) );
         })
+        
     }
 
     openPost = async(slug)=>{

@@ -37,8 +37,11 @@ nav a{
 section{
     max-width: 800px;
     margin: 0px auto;
-    /* border-bottom: 1px solid rgb(200,200,200); */
-    /* height: 60vh; */
     height: auto;
     overflow: hidden;
+    padding: 8px;
+}
+
+section>*{
+    flex-wrap: wrap;
 }

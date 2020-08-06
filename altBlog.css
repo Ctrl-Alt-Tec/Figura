@@ -35,6 +35,7 @@
 }
 .altBlog.altBlogContainer article{
     padding-top: 24px;
+    width: 100%;
 }
 .altBlog.altBlogContainer .social{
     display: flex;

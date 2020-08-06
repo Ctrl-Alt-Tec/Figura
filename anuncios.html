@@ -19,13 +19,13 @@
     <script src="./altBlog.js"></script>
     <script>
 
-        let blog = new AltBlog('https://cors-anywhere.herokuapp.com/ctrl-alt-tec.herokuapp.com/colab/figura/blog/', {
+let blog = new AltBlog('https://cors-anywhere.herokuapp.com/ctrl-alt-tec.herokuapp.com/colab/figura/blog/', {
             initialHTML: `
-                <h1 style="width: 100%">¿Qué hay de nuevo?</h1>
+                <h1 style="width: 100%">Anuncios</h1>
             `
         })
         blog.fetchPosts().then(()=>{
-            blog.displayPosts(post=>post.category == 'Novedades')
+            blog.displayPosts(post=>post.category == 'Anuncios')
         });
 
     </script>
