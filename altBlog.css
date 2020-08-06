@@ -1,0 +1,42 @@
+.altBlog.card{
+    max-width: 300px;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgb(200,200,200);
+    margin: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-decoration: none;
+    color: inherit;
+}
+.altBlog.card .card_category{
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgb(100, 100, 100);
+}
+.altBlog.card .card_title{
+    margin: 0;
+    font-size: 2rem;
+    color: black;
+}
+.altBlog.card .card_author{
+    margin-top: auto;
+    color: rgb(160, 160, 160);
+}
+.altBlog.altBlogContainer{
+    max-width: 1000px;
+    margin: 0px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 16px;
+}
+.altBlog.altBlogContainer article{
+    padding-top: 24px;
+}
+.altBlog.altBlogContainer .social{
+    display: flex;
+    flex-direction: column;
+}
