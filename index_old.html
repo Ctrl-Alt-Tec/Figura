@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIgura</title>
+    <style>
+
+        .card{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Figura, Quanta, Ctrl Alt Tec</h1>
+    </nav>
+    <script>
+
+        class Submission{
+            author
+            authorID
+            description
+            title
+            technique
+            format
+            year
+            justification
+            grade
+            justifiedGrade
+            constructor(options){
+                ['author', 'authorID', 'description', 'title', 'technique', 'format', 'year', 'justification', 'grade', 'justifiedGrade'].forEach(key=>{
+                    this[key] = options[key]
+                })
+            }
+            renderCard(){
+                let card = document.createElement('div');
+            }
+        }
+
+        let data = [
+            new Submission({
+                author: 'Edaurdo Villalpando',
+                authorID: 'A01023646', 
+                description: 'Lorem ipsum dolor sit atem', 
+                title: 'Oscilaciones', 
+                technique: 'Lápiz', 
+                format: 'Carta',
+                year: 2020, 
+                justification: 'More lorem ipsum dolor', 
+                grade: 100, 
+                justifiedGrade: 100
+            })
+        ]
+
+
+
+
+    </script>
+</body>
+</html>

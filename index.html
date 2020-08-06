@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin: 0;
+            padding: 0; 
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            
+            background-size: 20px
+        }
+        p{
+            font-size: 1.5rem;
+        }
+        h1{
+            font-size: 2rem;
+            color: #363e8f
+        }
+        blockquote{
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+        }
+        nav{
+            display: flex;
+            background-color: #8f368f;
+            color: #8f368f;
+            padding: 16px;
+            box-sizing: border-box;
+            color: white;
+            position: sticky;
+            top: 0; 
+        }
+        nav a{
+            color: inherit;
+            text-decoration: none;
+            flex: 1;
+            text-align: center;
+        }
+
+        section{
+            max-width: 800px;
+            margin: 0px auto;
+            /* border-bottom: 1px solid rgb(200,200,200); */
+            /* height: 60vh; */
+            height: auto;
+            overflow: hidden;
+        }
+
+        #background{
+            height: 60vh;
+            background: url('./drawing.gif'), url(./background.png) rgba(255,255,255,0.8);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-blend-mode: multiply;
+        }
+        #activities{
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0
+        }
+
+        #activities li{
+            display: flex;
+            border: 1px solid;
+            flex: 1;
+            padding: 16px;
+            font-size: 1.2rem;
+            margin: 8px;
+            text-align: center;
+        }
+
+
+        #quienes-somos-container{
+            background: url(./shapes.png) rgba(255, 255, 255, 0.95);
+            background-size: 130px;
+            background-blend-mode: color;
+            background-attachment: fixed;
+
+        }
+        #mision-container{
+            background: url(./watercolor.png);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #mision-container section{
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="">Inicio</a>
+        <a href="">¿Qué hay de nuevo?</a>
+        <a href="">Eventos</a>
+        <a href="">Novedades</a>
+    </nav>
+    <section id="background">
+        <!-- logo -->
+    </section>
+
+    <div id="quienes-somos-container" class="cont">
+        <section>
+            <img src="./image1.jpg" alt="" style="float: right;">
+            <h1>Quiénes somos</h1>
+            <p>
+                Somos un grupo estudiantil de arte compuesto por apasionados alumnos del Tecnológico de Monterrey, Campus Santa Fe.
+            </p>
+        </section>
+    </div>
+
+    
+    <div id="mision-container">
+        <section>
+            <h1>Misión</h1>
+            <p>
+                Fomentar la apreciación y el entendimiento de las artes visuales y plásticas en el Tec CSF a través de diversas actividades y dinámicas
+            </p>
+        </section>
+    </div>
+
+    <section>
+        <h1>Proyectos</h1>
+
+        <blockquote>
+            "Un verdadero artista no es el que se inspira, sino el que inspira a otros"
+        </blockquote>
+
+        <ul id="activities">
+            <li>Charlas</li>
+            <li>Exposiciones</li>
+            <li>Convocatorias</li>
+            <li>Entrevistas</li>
+
+        </ul>
+    </section>
+    <section>
+        <h1>Únete</h1>
+    </section>
+
+    <footer style="font-size: 1rem; color: rgb(100, 100, 100); text-align: center;">
+        <p>
+            Made with 💙 by <a href="https://ctrl-alt-tec.hackclub.com">Ctrl Alt Tec</a>
+        </p>
+    </footer>
+
+</body>
+</html>
