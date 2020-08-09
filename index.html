@@ -2,6 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" 
+         content="default-src *; 
+                  style-src * 'self' 'unsafe-inline' 'unsafe-eval'; 
+                  script-src * 'self' 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figura</title>
     <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
@@ -9,8 +13,10 @@
     <link rel="stylesheet" href="style.css">
     <style>
 
-        
-
+        body{
+            height: 100%;
+            overflow: scroll;
+        }
 
         #hero-container{
             background: url(./img/drawing.gif) #e6c5e6;
@@ -58,14 +64,18 @@
         
         #highlights{
             display: flex;
+            max-height: 25vw !important;
+
         }
         #highlights img{
             width: 0;
             flex: 1;
+            height: auto;
+            max-height: 25% !important;
         }
 
         #mision-container{
-            background: url(./img/watercolor.png),  url(./img/mission.jpg) #dcd8cc;
+            background: url(./img/watercolor.png), url(./img/mission.jpg) #dcd8cc;
             background-size: cover, contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -73,7 +83,7 @@
             background-attachment: fixed;
         }
         #mision-container section{
-            min-height: 60vmin;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -89,7 +99,7 @@
             background-attachment: fixed;
         }
         #projects-container section{
-            min-height: 90vmin;
+            min-height: 90vh;
             color: white;
         }
         #projects-container section blockquote{
@@ -118,9 +128,24 @@
 
 
         #join-container{
-            background: url(./img/shapes.png) rgba(255,255,255,0.8);
+            background: url(./img/shapes.png), rgba(255,255,255,0.8);
             background-size: 1000px;
             background-blend-mode: exclusion;
+            /* background-blend-mode: luminosity; */
+        }
+        #join-container section iframe{
+            border: 2px solid red;
+        }
+
+
+        @supports (-webkit-touch-callout: none) {
+            /* CSS specific to iOS devices */ 
+            #mision-container, #projects-container{
+                background-attachment: scroll !important;
+            }
+            #join-container iframe{
+                display: none;
+            }
         }
 
     </style>
@@ -212,6 +237,15 @@
             Made with 💙 by <a href="https://ctrl-alt-tec.hackclub.com">Ctrl Alt Tec</a>
         </p>
     </footer>
+
+    <script>
+        (async()=>{
+            let raw = await fetch('https://cors-anywhere.herokuapp.com/forms.gle/5rnjDhcYo9f7YACt5');
+            let body = await raw.text();
+            document.querySelector("#join-container section").innerHTML+=body
+
+        })
+    </script>
 
 </body>
 </html>
