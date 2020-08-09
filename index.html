@@ -4,78 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Figura</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
 
-        #background{
-            height: 60vh;
-            background: url('./drawing.gif'), url(./img/background.png) rgba(255,255,255,0.8);
+        
+
+
+        #hero-container{
+            background: url(./img/drawing.gif) #e6c5e6;
             background-repeat: no-repeat;
             background-position: center;
-            background-blend-mode: multiply;
+            background-blend-mode: screen;
+            background-size: cover;
         }
-        #activities{
+        #hero-container section{
+            height: 80vh;
+            background: url(./img/background.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 80vmin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        #hero-container section h1{
+            text-align: center;
+            font-family: 'Roboto Slab', serif;
+            text-shadow: 1px 1px 26px #000000;
+            color: #363e8f;
+            -webkit-text-stroke: 2px white;
+            text-stroke: 2px white;
+        }
+        #hero-container section h1, #hero-container section h2{
+            margin: 0;
+        }
+
+        #quienes-somos-container{
+            background: url(./img/quienessomos.jpg) black;
+            background-size: contain;
+            background-position: center right;
+            background-repeat: no-repeat;
+        }
+        #quienes-somos-container section{
+            color: white;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #highlights{
+            display: flex;
+        }
+        #highlights img{
+            width: 0;
+            flex: 1;
+        }
+
+        #mision-container{
+            background: url(./img/watercolor.png),  url(./img/mission.jpg) #dcd8cc;
+            background-size: cover, contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: darken;
+            background-attachment: fixed;
+        }
+        #mision-container section{
+            min-height: 60vmin;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        
+        #projects-container{
+            background: url(./img/quote.jpg) #363e8f;
+            background-size: cover;
+            background-blend-mode: lighten;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        #projects-container section{
+            min-height: 90vmin;
+            color: white;
+        }
+        #projects-container section blockquote{
+            text-shadow: 1px 1px 18px black;
+        }
+
+
+        #projects-container section ul{
             list-style: none;
             display: flex;
             padding: 0;
             margin: 0
         }
 
-        #activities li{
+        #projects-container section ul li{
             display: flex;
-            border: 1px solid;
             flex: 1;
             padding: 16px;
             font-size: 1.2rem;
             margin: 8px;
             text-align: center;
+            background: white;
+            color: black;
         }
 
 
-        #quienes-somos-container{
-            background: url(./img/shapes.png) rgba(255, 255, 255, 0.95);
-            background-size: 130px;
-            background-blend-mode: color;
-            background-attachment: fixed;
 
+        #join-container{
+            background: url(./img/shapes.png) rgba(255,255,255,0.8);
+            background-size: 1000px;
+            background-blend-mode: exclusion;
         }
-        #mision-container{
-            background: url(./img/watercolor.png);
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        #mision-container section{
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
 
     </style>
 </head>
 <body>
+
+    <div id="hero-container">
+        <section id="background">
+            <!-- logo -->
+            <h1>FIGURA</h1>
+            <h2>Grupo estudiantil</h2>
+        </section>
+    </div>
+
     <nav>
         <a href="./index.html">Inicio</a>
         <a href="./novedades.html">¿Qué hay de nuevo?</a>
         <a href="./anuncios.html">Anuncios</a>
         <a href="">Concursos</a>
     </nav>
-    <section id="background">
-        <!-- logo -->
-    </section>
+    
+    
+    <div id="highlights">
+        <img src="./img/highlights-1.jpg" alt="">
+        <img src="./img/highlights-2.jpg" alt="">
+        <img src="./img/highlights-3.png" alt="">
+        <img src="./img/highlights-4.jpg" alt="">
+
+    </div>  
+
+
+    
 
     <div id="quienes-somos-container" class="cont">
         <section>
-            <img src="./img/image1.jpg" alt="" style="float: right; width: 100%; max-width: 400px;">
             <h1>Quiénes somos</h1>
             <p>
                 Somos un grupo estudiantil de arte compuesto por apasionados alumnos del Tecnológico de Monterrey, Campus Santa Fe.
             </p>
         </section>
     </div>
+
+    
 
     
     <div id="mision-container">
@@ -87,22 +175,37 @@
         </section>
     </div>
 
-    <section>
-        <h1>Proyectos</h1>
-        <blockquote>
-            "Un verdadero artista no es el que se inspira, sino el que inspira a otros"
-        </blockquote>
-        <ul id="activities">
-            <li>Charlas</li>
-            <li>Exposiciones</li>
-            <li>Convocatorias</li>
-            <li>Entrevistas</li>
 
-        </ul>
-    </section>
-    <section>
-        <h1>Únete</h1>
-    </section>
+    <div id="projects-container">
+        <section>
+            <h1>Proyectos</h1>
+            <blockquote>
+                "Un verdadero artista no es el que se inspira, sino el que inspira a otros"
+            </blockquote>
+            <p>Salvador Dalí</p>
+
+            <ul id="activities">
+                <li>Charlas</li>
+                <li>Exposiciones</li>
+                <li>Convocatorias</li>
+                <li>Entrevistas</li>
+
+            </ul>
+        </section>
+
+    </div>
+
+    <div id="join-container">
+        <section>
+            <h1>Únete</h1>
+            <p>¿Qué estás esperando para formar parte de esta increíble comunidad?</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfFYz3631iATpZSVk_-R6X7T5tlitH8372KxGRPOYGIs5B9FQ/viewform?embedded=true" width="100%" height="1704" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+        </section>
+    </div>
+
+
+
+
 
     <footer style="font-size: 1rem; color: rgb(100, 100, 100); text-align: center;">
         <p>
