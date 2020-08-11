@@ -16,7 +16,8 @@ h1{
 }
 blockquote{
     font-family: 'Homemade Apple', cursive;
-    font-size: 3rem;
+    font-color: #e6e6e6;
+    font-size: 2rem;
     line-height: 1.5;
     font-weight: bold;
 }
