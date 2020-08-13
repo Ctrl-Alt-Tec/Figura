@@ -136,8 +136,21 @@
             /* background-blend-mode: luminosity; */
         }
         #join-container section iframe{
-            border: 2px solid red;
+            display: block;
         }
+
+	#join-container section button{
+		-webkit-appearance: none;
+		appearance: none;
+		background: #363e8f;
+		padding: 16px;
+		border: 8px;
+		margin: 8px auto;
+		font-weight: 600;
+		color: white;
+		font-size: 2rem;
+		display: none;
+	}
 
 
         @supports (-webkit-touch-callout: none) {
@@ -146,16 +159,14 @@
                 background-attachment: scroll !important;
             }
             #join-container iframe{
-                display: none;
+               	display: none !important;
             }
+	    #join-container button{
+		display: block !important;
+	    }
         }
 
     </style>
-  
-      <script src="https://cdn.jsdelivr.net/npm/vconsole"></script>
-      <script>new VConsole()</script> 
-     
-
 </head>
 <body id="topPage">
 
@@ -232,6 +243,7 @@
             <h1>Únete</h1>
             <p>¿Qué estás esperando para formar parte de esta increíble comunidad?</p>
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfFYz3631iATpZSVk_-R6X7T5tlitH8372KxGRPOYGIs5B9FQ/viewform?embedded=true" width="100%" height="1704" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+	    <button id="forms">Registrarme</button>
         </section>
     </div>
 
