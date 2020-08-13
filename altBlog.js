@@ -1,6 +1,6 @@
 let _this;
 class AltBlog{
-    static LikeButton = (url)=>{
+    static LikeButton (url){
         let likeButton = document.createElement('div');
         likeButton.className = 'fb-like';
         likeButton.setAttribute('data-href', url);
@@ -11,7 +11,7 @@ class AltBlog{
         likeButton.setAttribute('data-share', 'false');
         return likeButton;
     }
-    static CommentSection = (url)=>{
+    static CommentSection (url){
         let commentSection = document.createElement('div');
         commentSection.className = 'fb-comments';
         commentSection.setAttribute('data-href', url);
@@ -19,7 +19,7 @@ class AltBlog{
         commentSection.setAttribute('data-width', '');
         return commentSection;
     }
-    static Card = (post, options)=>{
+    static Card (post, options){
         let card = document.createElement('a');
         card.className = 'altBlog card';
         card.href = '?post='+post.slug;
@@ -63,12 +63,13 @@ class AltBlog{
         this.container.classList.add('altBlog', 'altBlogContainer')
     }
     
-    fetchPosts = async()=>{
+    async fetchPosts (){
         let posts_raw = await fetch( this.baseURL );
         this.posts = await posts_raw.json();
 
         if(this.options.enableQueries){
-            let query = new URLSearchParams(window.location.search);
+            let query = new 
+URLSearchParams(window.location.search);
     
             if (query.get('post')){
                 this.openPost(query.get('post'))
@@ -78,7 +79,7 @@ class AltBlog{
         }
     }
 
-    displayPosts = (cond = ()=>true)=>{
+    displayPosts (cond = ()=>true){
         this.container.innerHTML = "";
         this.container.innerHTML = this.options.initialHTML || "";
         this.posts.filter(cond).forEach(post=>{
@@ -87,7 +88,7 @@ class AltBlog{
         
     }
 
-    openPost = async(slug)=>{
+    async openPost (slug){
         this.container.innerHTML = "";
         let post_raw = await fetch(this.baseURL+'/'+slug);
         let post = await post_raw.text();
