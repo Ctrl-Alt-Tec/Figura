@@ -1,4 +1,5 @@
 let _this;
+window.sessionStorage;
 class AltBlog{
     static LikeButton (url){
         let likeButton = document.createElement('div');
@@ -47,30 +48,35 @@ class AltBlog{
     
     
     
-    constructor(baseURL, o){
+    constructor(baseURL, o, env){
+        this.environment=env;
         _this = this;
         let options = {
-            container: document.querySelector('#container'),
             enableQueries: true,
             initialHTML: '',
             ...o
         };
-        this.baseURL = baseURL;
-        this.container = options.container;
+        if(sessionStorage.getItem('sbaseURL')==null){
+            sessionStorage.setItem('sbaseURL',baseURL);
+        }
+        this.baseURL = sessionStorage.getItem('sbaseURL');
+        this.container = document.querySelector('#container')
         this.options = options;
         this.posts = [];
         
         this.container.classList.add('altBlog', 'altBlogContainer')
     }
+
+
     
     async fetchPosts (){
-        let posts_raw = await fetch( this.baseURL );
-        this.posts = await posts_raw.json();
+        //if(this.environment=='figuraBlog'){
+            let posts_raw = await fetch( this.baseURL );
+            this.posts = await posts_raw.json();
+        //}
 
         if(this.options.enableQueries){
-            let query = new 
-URLSearchParams(window.location.search);
-    
+            let query = new URLSearchParams(window.location.search);
             if (query.get('post')){
                 this.openPost(query.get('post'))
             } else {

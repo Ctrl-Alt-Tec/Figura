@@ -20,15 +20,14 @@
     <div id="container"></div>
     <script src="./altBlog.js"></script>
     <script>
-
+        const environment = 'figuraBlog';
         async function waiting(){
             document.getElementById("container").innerHTML = `<h1>Cargando...</h1>`
-            
             let blog = new AltBlog('https://cors-anywhere.herokuapp.com/ctrl-alt-tec.herokuapp.com/colab/figura/blog/', {
                 initialHTML: `
                     <h1 style="width: 100%">Anuncios</h1>
                 `
-            })
+            }, environment)
             blog.fetchPosts().then(()=>{
                 blog.displayPosts(post=>post.category == 'Anuncios')
             });
