@@ -70,31 +70,10 @@ class AltBlog{
 
     
     async fetchPosts (){
-        if(this.environment=='figuraBlog' && sessionStorage.getItem('title')==null){
+        //if(this.environment=='figuraBlog'){
             let posts_raw = await fetch( this.baseURL );
-            var postits = await posts_raw.json();
-            for(let i=0;i<postits.length;i++){
-                sessionStorage.setItem('title'+i,postits[i].title);
-                sessionStorage.setItem('id'+i,postits[i].id);
-                sessionStorage.setItem('author'+i,postits[i].autor);
-                sessionStorage.setItem('category'+i,postits[i].category);
-                sessionStorage.setItem('tags'+i,postits[i].tags);
-                sessionStorage.setItem('slug'+i,postits[i].slug)
-                sessionStorage.setItem('url'+i,postits[i].url);
-            }
-        }
-
-        if(this.environment=='figuraBlog'){
-            for(let i =0;i<postits.length;i++){
-                this.posts[i].title = sessionStorage.getItem('title'+i)
-                this.posts[i].id = sessionStorage.getItem('id'+i)
-                this.posts[i].author = sessionStorage.getItem('author'+i)
-                this.posts[i].category = sessionStorage.getItem('category'+i)
-                this.posts[i].tags = sessionStorage.getItem('tags'+i)
-                this.posts[i].slug = sessionStorage.getItem('slug'+i)
-                this.posts[i].url = sessionStorage.getItem('url'+i)
-            }
-        }
+            this.posts = await posts_raw.json();
+        //}
 
         if(this.options.enableQueries){
             let query = new URLSearchParams(window.location.search);
