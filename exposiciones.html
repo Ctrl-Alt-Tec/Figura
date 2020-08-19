@@ -3,41 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figura - Qué hay de nuevo</title>
+    <title>Figura - Galería de exposiciónes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="altBlog.css">
     <link rel="icon" type="image/png" href="./img/background.png" />
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0&appId=1190445321316803&autoLogAppEvents=1" nonce="BUb9bUSz"></script>
 </head>
 <body>
-    <nav>
+    <nav id='TOP' style="position: static;">
         <a href="./index.html">Inicio</a>
         <a href="./novedades.html">¿Qué hay de nuevo?</a>
         <a href="./anuncios.html">Anuncios</a>
         <a href='./exposiciones.html'>Galería de exposiciones</a>
         <a href="concursos.html">Concursos</a>
     </nav>
+    <nav style="background-color: #2000ad" >
+        <a style="text-align: inherit;"> Galería de exposiciones</a><!--Yo se que esta mal usado pero se veia feo con otro tag -->
+        <a href="#TOP" style="text-align: right;">Volver arriba</a>
+
+    </nav>
+
     <div id="container"></div>
-    <script src="./altBlog.js"></script>
+    <script src="./expos.js"></script>
     <script>
 
-        async function waiting(){
-            document.getElementById("container").innerHTML = `<h1>Cargando...</h1>`
-            let blog = new AltBlog('https://cors-anywhere.herokuapp.com/ctrl-alt-tec.herokuapp.com/colab/figura/blog/', {
-                initialHTML: `
-                    <h1 style="width: 100%">¿Qué hay de nuevo?</h1>
-                `
-            })
-            blog.fetchPosts().then(()=>{
-                blog.displayPosts(post=>post.category == 'Novedades')
-            });
-        }waiting()
 
     </script>
     <noscript>Tu explorador no soporta o tiene desactivado JavaScript :(</noscript>
 
     <footer>
         <p>
+
         </p>
     </footer>
 
