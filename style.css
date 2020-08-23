@@ -31,11 +31,21 @@ nav{
     position: sticky;
     top: 0; 
 }
+
+nav span.links{
+    display: flex;
+    flex: 1;
+}
+
 nav a{
     color: inherit;
     text-decoration: none;
     flex: 1;
     text-align: center;
+}
+
+nav .menu{
+    display: none;
 }
 
 section{
@@ -48,4 +58,38 @@ section{
 
 section>*{
     flex-wrap: wrap;
+}
+
+@media screen and (max-width: 900px){
+    nav{
+        height: 80px;
+    }
+    nav .menu{
+        display: block;
+    }
+
+    nav .links{
+        display: none !important;
+    }
+    nav:focus-within .menu{
+        display: none;
+    }
+
+    nav:focus-within .links{
+        display: flex !important;
+        background: #8f368fCC;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        left: 0; right: 0;
+        /* top: 0; left: 0; right: 0; bottom: 0; */
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav .links > * {
+        display: block;
+        padding: 16px;
+        flex: 0;
+        border-bottom: 1px solid
+    }
 }
