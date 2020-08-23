@@ -22,16 +22,15 @@
     <script>
         const environment = 'figuraBlog';
         async function waiting(){
-            document.getElementById("container").innerHTML = `<h1>Cargando...</h1>`
             let blog = new AltBlog('https://cors-anywhere.herokuapp.com/ctrl-alt-tec.herokuapp.com/colab/figura/blog/', {
                 initialHTML: `
                     <h1 style="width: 100%">¿Qué hay de nuevo?</h1>
                 `
             },environment)
-            blog.fetchPosts().then(()=>{
-                blog.displayPosts(post=>post.category == 'Novedades')
+            blog.fetchPosts(post=>post.category == 'Novedades').then(()=>{
             });
-        }waiting()
+        }
+        waiting()
 
     </script>
     <noscript>Tu explorador no soporta o tiene desactivado JavaScript :(</noscript>

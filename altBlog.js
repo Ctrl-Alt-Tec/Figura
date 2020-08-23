@@ -63,24 +63,26 @@ class AltBlog{
         this.container = document.querySelector('#container')
         this.options = options;
         this.posts = [];
-        
-        this.container.classList.add('altBlog', 'altBlogContainer')
+        this.container.classList.add('altBlog', 'altBlogContainer');
+        this.container.innerHTML = `Loading...`;
     }
 
 
     
-    async fetchPosts (){
-        //if(this.environment=='figuraBlog'){
+    async fetchPosts (filter){
+        // if(this.environment=='figuraBlog'){
             let posts_raw = await fetch( this.baseURL );
             this.posts = await posts_raw.json();
-        //}
+            this.posts = this.posts.filter(filter)
+            console.log(this.posts)
+        // }
 
         if(this.options.enableQueries){
             let query = new URLSearchParams(window.location.search);
             if (query.get('post')){
-                this.openPost(query.get('post'))
+                this.openPost(query.get('post'));
             } else {
-                this.displayPosts()
+                this.displayPosts();
             }
         }
     }
@@ -91,7 +93,10 @@ class AltBlog{
         this.posts.filter(cond).forEach(post=>{
             this.container.append( AltBlog.Card(post) );
         })
-        
+        if(this.posts.filter(cond).length<=0){
+            this.container.innerHTML += "No results.";
+        }
+        return; 
     }
 
     async openPost (slug){
