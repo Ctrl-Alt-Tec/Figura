@@ -17,9 +17,9 @@
         <span class="links">
             <a href="./index.html">Inicio</a>
             <a href="./novedades.html">¿Qué hay de nuevo?</a>
-            <a href="./anuncios.html">Anuncios</a>
+            <a href="./anuncios.html">Concursos y Anuncios</a>
             <a href='./exposiciones.html'>Galería de exposiciones</a>
-            <a href="./concursos.html">Concursos</a>
+            <!-- <a href="./concursos.html">Concursos</a> -->
         </span>
     </nav>
     <div id="container"></div>
@@ -29,7 +29,7 @@
         async function waiting(){
             let blog = new AltBlog('https://cors-anywhere.herokuapp.com/ctrl-alt-tec.herokuapp.com/colab/figura/blog/', {
                 initialHTML: `
-                    <h1 style="width: 100%">Anuncios</h1>
+                    <h1 style="width: 100%">Concursos y Anuncios</h1>
                 `
             }, environment)
             blog.fetchPosts(post=>post.category == 'Anuncios').then(()=>{
