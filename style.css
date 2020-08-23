@@ -29,6 +29,7 @@ nav{
     box-sizing: border-box;
     color: white;
     position: sticky;
+    z-index: 9999;
     top: 0; 
 }
 
@@ -62,26 +63,28 @@ section>*{
 
 @media screen and (max-width: 900px){
     nav{
-        height: 80px;
+        height: 80px; 
+    }
+    nav img{
+        height: 60px;
     }
     nav .menu{
-        display: block;
+        display: flex;
+        align-items: center;
     }
 
     nav .links{
         display: none !important;
     }
-    nav:focus-within .menu{
-        display: none;
-    }
-
+    
     nav:focus-within .links{
         display: flex !important;
         background: #8f368fCC;
         backdrop-filter: blur(10px);
         position: absolute;
+        z-index: 1000;
+        top: 80px;
         left: 0; right: 0;
-        /* top: 0; left: 0; right: 0; bottom: 0; */
         flex-direction: column;
         align-items: stretch;
     }
