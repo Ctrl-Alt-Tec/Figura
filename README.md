@@ -15,13 +15,13 @@ Para la parte de exposiciones, se utilizará la [Ctrl Alt Tec API](https://githu
 | artist              |  String[]            | Nombre de artista(s) |
 | artMedium    | String[]             |  Material utilizado (óleo, acuarela, acrílico) |
 | artForm         | Enum               | Tipo de obra de arte. Los tipos deberán definirse por FIgura |
-| dimensions  | [ float, float ]    | Array con el tamaño en `cm`  |
+| dimensions  | [ float, float ]    | Array con el tamaño en `cm` o `px` |
 | abstract         |  Text                 | Descripción del trabajo |
 | dateCreated | Date                 | Fecha de creación |
 | dateModified | Date              | (Opcional) Fecha de modificación |
 | datePublished | Date            | Fecha en que se subió a la plataforma |
 | resource | String (url)         | Dirección URL que contiene el recurso |
-| feedback | Feedback[]       | Array con de Objetos `Feedback` con calificación según criterios, comentarios, juez, etc. Podemos inspirarnos en el sistema de @Quanta con PaperPen |
+| feedback | Feedback[]       | Array con de Objetos `Feedback` con calificación según criterios, comentarios, juez, etc. Podemos inspirarnos en el sistema de [@Quanta con PaperPen](hhtps://github.com/quantacsf/paperpen) |
 | tags        |  String[]            | Array con las etiquetas
 
 ```js
