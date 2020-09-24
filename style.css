@@ -1,3 +1,33 @@
+.break{
+    flex-basis: 100%;
+    height: 0;
+}
+
+footer.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #8f368f;
+    z-index: 9998;
+    font-size: 20px;
+    font-color: white;
+}
+
+div.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 27px;
+}
+
+p.footer{
+    text-align: inherit; 
+    font-size: inherit; 
+    color: white; 
+    text-align: left; 
+    margin-left: 20px;
+}
+
 body{
     margin: 0;
     padding: 0; 
@@ -25,12 +55,13 @@ nav{
     display: flex;
     background-color: #8f368f;
     color: #8f368f;
-    padding: 16px;
+    
     box-sizing: border-box;
     color: white;
     position: sticky;
     z-index: 9999;
     top: 0; 
+    flex-wrap: wrap;
 }
 
 nav span.links{

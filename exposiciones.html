@@ -9,35 +9,48 @@
     <link rel="icon" type="image/png" href="./img/background.png" />
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0&appId=1190445321316803&autoLogAppEvents=1" nonce="BUb9bUSz"></script>
 </head>
-<body>
-    <nav tabindex="0">
+<body style="background-color: black;">
+
+    <div id="TOP"></div>
+    <nav tabindex="0" style='position: static;'>
         <div class="menu" >
             <img src="./img/background.png"> Figura
         </div>
-        <span class="links">
+        <span class="links" style='padding:16px;'>
             <a href="./index.html">Inicio</a>
             <a href="./novedades.html">¿Qué hay de nuevo?</a>
             <a href="./anuncios.html">Concursos y Anuncios</a>
             <a href='./exposiciones.html'>Galería de exposiciones</a>
             <!-- <a href="./concursos.html">Concursos</a> -->
         </span>
+        <div class="break"></div>
+        <div style="width: 100%; background-color: #2000ad; height: 20px;"></div>
     </nav>
-    <div style="background-color: #2000ad" >
-        <a style="text-align: inherit;"> Galería de exposiciones</a><!--Yo se que esta mal usado pero se veia feo con otro tag -->
-        <a href="#TOP" style="text-align: right;">Volver arriba</a>
-
-    </div>
+    
+    
 
     <div id="container"></div>
+
+    
     <script src="./expos.js"></script>
-    <script>
-
-
+    <script defer>
     </script>
     <noscript>Tu explorador no soporta o tiene desactivado JavaScript :(</noscript>
 
+    <!--
     <footer style="font-size: 1rem; color: rgb(100, 100, 100); text-align: center;">
         Made with 💙 by <a href="https://ctrl-alt-tec.hackclub.com">Ctrl Alt Tec</a><br/>
+    </footer>
+    -->
+
+    <footer class="footer">
+        <div class='footer'>
+            <p class='footer'> Galería de exposiciones</p>
+            <p class='footer'>
+                Made with 💙 by <a href="https://ctrl-alt-tec.hackclub.com" style='text-decoration: none; color: inherit;'>Ctrl Alt Tec</a>
+            </p>
+            <a href="#TOP" style="text-align: right; margin-right: 20px; text-decoration: none; color: white">Volver arriba</a>
+        </div>
     </footer>
 
 </body>
