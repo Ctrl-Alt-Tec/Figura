@@ -55,7 +55,7 @@ nav{
     display: flex;
     background-color: #8f368f;
     color: #8f368f;
-    
+    padding: 16px;
     box-sizing: border-box;
     color: white;
     position: sticky;
